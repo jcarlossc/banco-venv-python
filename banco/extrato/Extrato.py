@@ -7,7 +7,7 @@ class Extrato:
         print(f"TIPO DE CONTA: {conta.get_tipo_conta()}")
         print(f"TITULAR: {conta.get_usuario().get_nome()}")
         print(f"CPF: {conta.get_usuario().get_cpf()}")
-        print(f"SALDO: R$ {conta.get_saldo()}")
+        print(f"SALDO: R$ {round(conta.get_saldo(), 2)}")
         print("LISTA DE TRANSAÇÕES")
         for transacao in conta.get_historico().get_transacoes():
             print(transacao)
