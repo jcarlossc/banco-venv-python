@@ -1,6 +1,7 @@
 from banco.conta.ContaPoupanca import ContaPoupanca
 from banco.conta.ContaCorrente import ContaCorrente
 from banco.extrato.Extrato import Extrato
+from banco.log.Logging import Logging
 from banco.usuario.PessoaFisica import PessoaFisica
 
 class Menu:
@@ -9,6 +10,9 @@ class Menu:
 
     @classmethod
     def get_menu(self):
+
+        log = Logging()
+
         def menu():
             print("\n---------- BANCO PYTHON ----------\n")
             print("1 - CADASTRAR USUÁRIO")
@@ -27,6 +31,9 @@ class Menu:
                 cpf = input("DIGITE SEU CPF: ")
                 pessoa_fisica = PessoaFisica(nome, cpf)
                 print("\nUsuário cadastrado com sucesso!")
+
+                log.info("Usuário Cadastrado com sucesso.")
+
                 menu()
             elif opcoes == "2":
                 try:
@@ -58,6 +65,9 @@ class Menu:
                         print("----------------------------------")
                         conta_corrente.depositar(valor_deposito)
                         print("Valor depositado na conta corrente com sucesso!")
+
+                        log.info("Depósito em Conta Corrente realizado.")
+
                         menu()      
                     if escolha == "2":
                         print("----------------------------------")
@@ -65,6 +75,9 @@ class Menu:
                         print("----------------------------------")
                         conta_poupanca.depositar(valor_deposito)
                         print("Valor depositado na conta poupança com sucesso!")
+
+                        log.info("Depósito em Conta Poupança realizado.")
+
                         menu()    
                 except:
                     print("A opção depósito não é válida sem uma conta criada.")         
@@ -76,6 +89,9 @@ class Menu:
                         print("----------------------------------")
                         conta_corrente.sacar(valor_saque)
                         print("Valor sacado da conta corrente com sucesso!")
+
+                        log.info("Saque em Conta Corrente realizado.")
+
                         menu()    
                     if escolha == "2":
                         print("----------------------------------")
@@ -83,6 +99,9 @@ class Menu:
                         print("----------------------------------")
                         conta_poupanca.sacar(valor_saque)
                         print("Valor sacado da conta poupança com sucesso!")
+
+                        log.info("Saque em Conta Poupança realizado.")
+
                         menu()    
                 except:
                     print("A opção saque não é válida sem uma conta criada.") 
@@ -98,6 +117,9 @@ class Menu:
                     print("A opção Extrato não é válida sem uma conta criada.")             
             elif opcoes == "6": 
                 print("OBIGADO E VOLTE SEMPRE!")
+
+                log.info("Sistema encerrado.")
+
                 exit()   
             else:
                 print("Opção inválida!")        
