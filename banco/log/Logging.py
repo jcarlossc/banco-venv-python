@@ -1,7 +1,7 @@
 import logging
 
 class Logging:
-    """Gerencia logs do sistema."""
+    """Gerenciamento dos logs do sistema."""
     
     def __init__(self, arquivo_log='app.log'):
         self.logger = logging.getLogger("Logging")

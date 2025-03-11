@@ -9,10 +9,12 @@ class ContaCorrente(ContaBancaria):
     def depositar(self, valor):
         self.saldo += valor  
         self.historico.add_transacao(Deposito(valor, "Depósito"))
+        return valor
 
     def sacar(self, valor):
         self.saldo -= valor 
-        self.historico.add_transacao(Saque(valor, "Saque"))   
+        self.historico.add_transacao(Saque(valor, "Saque"))  
+        return valor 
 
     def get_tipo_conta(self):
         return "Conta Corrente"       
