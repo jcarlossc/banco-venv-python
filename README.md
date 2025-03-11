@@ -4,7 +4,7 @@ Estudo sobre orientação a objetos e os respectivos testes unitário em linguag
 
 VENV: Um ambiente virtual em Python isola dependências do projeto, evitando conflitos com pacotes globais do sistema. Ele permite que cada projeto tenha suas próprias bibliotecas e versões específicas.
 
-O projeto é composto por sete pacotes: 
+O projeto é composto por 11 classes e sete pacotes: 
 * usuário: classe PessoaFísica; 
 * conta: classes ContaCorrente e ContaPoupança que estendem a classe abstrata ContaBancária;
 * transação: classes Depósito e Saque que estendem a classe Transação;
