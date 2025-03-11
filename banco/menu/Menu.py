@@ -72,48 +72,60 @@ class Menu:
                         print("---------------------------------------------------------------------------------------")
                         valor_deposito = float(input("DIGITE O VALOR DO DEPÓSITO: "))
                         print("---------------------------------------------------------------------------------------")
-                        conta_corrente.depositar(valor_deposito)
-                        print("Valor da conta corrente depositado com sucesso!")
+                        if valor_deposito <= 0:
+                            print("Valor inválido. Tente novamente.")
+                        else:    
+                            conta_corrente.depositar(valor_deposito)
+                            print("Valor da conta corrente depositado com sucesso!")
 
-                        log.info("Depósito em Conta Corrente realizado.")
-
+                            log.info("Depósito em Conta Corrente realizado.")
                         menu()      
                     if escolha == "2":
                         print("---------------------------------------------------------------------------------------")
                         valor_deposito = float(input("DIGITE O VALOR DO DEPÓSITO: "))
                         print("---------------------------------------------------------------------------------------")
-                        conta_poupanca.depositar(valor_deposito)
-                        print("Valor da conta poupança depositadocom sucesso!")
+                        if valor_deposito <= 0:
+                                print("Valor inválido. Tente novamente.")
+                        else:    
+                            conta_poupanca.depositar(valor_deposito)
+                            print("Valor da conta poupança depositadocom sucesso!")
 
-                        log.info("Depósito em Conta Poupança realizado.")
-
+                            log.info("Depósito em Conta Poupança realizado.")
                         menu()    
                 except:
-                    print("A opção depósito não é válida sem uma conta criada.")         
+                    print("A opção depósito não é válida sem uma conta criada.")   
+                    menu()      
             elif opcoes == "4":
                 try:
                     if escolha == "1":
                         print("---------------------------------------------------------------------------------------")
                         valor_saque = float(input("DIGITE O VALOR DO SAQUE: "))
                         print("---------------------------------------------------------------------------------------")
-                        conta_corrente.sacar(valor_saque)
-                        print("Valor da conta corrente sacado com sucesso!")
+                        if valor_saque > conta_corrente.get_saldo(): 
+                            print("Saldo insuficiente.")
+                        else: 
+                            conta_corrente.sacar(valor_saque)
+                            print("Valor da conta corrente sacado com sucesso!")
 
-                        log.info("Saque em Conta Corrente realizado.")
+                            log.info("Saque em Conta Corrente realizado.")
 
                         menu()    
                     if escolha == "2":
                         print("---------------------------------------------------------------------------------------")
                         valor_saque = float(input("DIGITE O VALOR DO SAQUE: "))
                         print("---------------------------------------------------------------------------------------")
-                        conta_poupanca.sacar(valor_saque)
-                        print("Valor da conta poupança sacado com sucesso!")
+                        if valor_saque > conta_poupanca.get_saldo(): 
+                            print("Saldo insuficiente.")
+                        else: 
+                            conta_poupanca.sacar(valor_saque)
+                            print("Valor da conta poupança sacado com sucesso!")
 
-                        log.info("Saque em Conta Poupança realizado.")
+                            log.info("Saque em Conta Poupança realizado.")
 
                         menu()    
                 except:
-                    print("A opção saque não é válida sem uma conta criada.") 
+                    print("A opção saque não é válida sem uma conta criada.")
+                    menu() 
             elif opcoes == "5":   
                 try:      
                     if escolha == "1":
