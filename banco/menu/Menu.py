@@ -5,12 +5,21 @@ from banco.log.Logging import Logging
 from banco.usuario.PessoaFisica import PessoaFisica
 
 class Menu:
+    """Classe que representa o menu do sistema. 
+
+    Atributos:
+        None.
+    """
     def __init__(self):
         pass
 
     @classmethod
     def get_menu(self):
+        """Acessa o menu, centraliza todas as operações do sistema.
 
+        Retorna:
+            None.
+        """
         log = Logging()
 
         def menu():

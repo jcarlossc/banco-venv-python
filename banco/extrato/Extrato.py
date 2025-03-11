@@ -1,8 +1,18 @@
 class Extrato:
+    """Classe que representa o extrato das contas. 
+
+    Atributos:
+        None.
+    """
     def __init__(self):
         pass
         
     def get_extrato(conta):
+        """Imprime extrato.
+
+        Retorna:
+            None.
+        """
         print("---------------------------------------- EXTRATO ----------------------------------------")
         print(f"TIPO DE CONTA: {conta.get_tipo_conta()}")
         print(f"TITULAR: {conta.get_usuario().get_nome()}")

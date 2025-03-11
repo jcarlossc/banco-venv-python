@@ -1,8 +1,11 @@
 import logging
 
 class Logging:
-    """Gerenciamento dos logs do sistema."""
-    
+    """Classe que gerencia os logs do sistema. 
+
+    Atributos:
+        str (arquivo): 
+    """
     def __init__(self, arquivo_log='app.log'):
         self.logger = logging.getLogger("Logging")
         self.logger.setLevel(logging.DEBUG)
@@ -19,16 +22,41 @@ class Logging:
         self.logger.addHandler(manipulador_arquivo)
 
     def debug(self, msg):
+        """Cria mensagem de Debug.
+
+        Retorna:
+            None.
+        """
         self.logger.debug(msg)
 
     def info(self, msg):
+        """Cria mensagem de informação.
+
+        Retorna:
+            None.
+        """
         self.logger.info(msg)
 
     def warning(self, msg):
+        """Cria mensagem de atenção.
+
+        Retorna:
+            None.
+        """
         self.logger.warning(msg)
 
     def error(self, msg):
+        """Cria mensagem de erro.
+
+        Retorna:
+            None.
+        """
         self.logger.error(msg)
 
     def critical(self, msg):
+        """Cria mensagem crítica.
+
+        Retorna:
+            None.
+        """
         self.logger.critical(msg)
