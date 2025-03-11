@@ -13,7 +13,7 @@ O projeto é composto por sete pacotes:
 * log: classe Logging;
 * e menu: classe Menu.
 
-O projeto também conta com algumas classes de teste unitários com módulo 'unittest'. Seguem abaixo os comandos para serem executados na raiz do projeto.
+O projeto também conta com algumas classes de testes unitários com módulo 'unittest'. Seguem abaixo os comandos para serem executados na raiz do projeto.
 * ```python -m unittest tests/banco/usuario/TestPessoaFisica.py```
 * ```python -m unittest tests/banco/conta/TestContaCorrente.py```
 * ```python -m unittest tests/banco/conta/TestContaPoupanca.py```

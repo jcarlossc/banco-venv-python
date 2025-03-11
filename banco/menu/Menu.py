@@ -23,14 +23,14 @@ class Menu:
         log = Logging()
 
         def menu():
-            print("\n---------- BANCO PYTHON ----------\n")
+            print("\n------------------------------------- BANCO PYTHON ------------------------------------\n")
             print("1 - CADASTRAR USUÁRIO")
             print("2 - CRIAR CONTA")
             print("3 - DEPOSITAR")
             print("4 - SACAR")
             print("5 - EXTRATO")
             print("6 - SAIR")
-            print("\n-------------- FIM ---------------\n")
+            print("\n----------------------------------------- FIM -----------------------------------------\n")
         menu()
 
         while True:
@@ -48,10 +48,10 @@ class Menu:
                 try:
                     cpf = input("DIGITE SEU CPF: ")
                     if cpf == pessoa_fisica.get_cpf():    
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         print("1 - Conta Corrente")
                         print("2 - Conta Poupança")
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         escolha = input("ESCOLHA O TIPO DE CONTA: ")
                         if escolha == "1":
                             conta_corrente = ContaCorrente(pessoa_fisica)
@@ -69,21 +69,21 @@ class Menu:
             elif opcoes == "3":
                 try:
                     if escolha == "1":
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         valor_deposito = float(input("DIGITE O VALOR DO DEPÓSITO: "))
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         conta_corrente.depositar(valor_deposito)
-                        print("Valor depositado na conta corrente com sucesso!")
+                        print("Valor da conta corrente depositado com sucesso!")
 
                         log.info("Depósito em Conta Corrente realizado.")
 
                         menu()      
                     if escolha == "2":
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         valor_deposito = float(input("DIGITE O VALOR DO DEPÓSITO: "))
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         conta_poupanca.depositar(valor_deposito)
-                        print("Valor depositado na conta poupança com sucesso!")
+                        print("Valor da conta poupança depositadocom sucesso!")
 
                         log.info("Depósito em Conta Poupança realizado.")
 
@@ -93,21 +93,21 @@ class Menu:
             elif opcoes == "4":
                 try:
                     if escolha == "1":
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         valor_saque = float(input("DIGITE O VALOR DO SAQUE: "))
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         conta_corrente.sacar(valor_saque)
-                        print("Valor sacado da conta corrente com sucesso!")
+                        print("Valor da conta corrente sacado com sucesso!")
 
                         log.info("Saque em Conta Corrente realizado.")
 
                         menu()    
                     if escolha == "2":
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         valor_saque = float(input("DIGITE O VALOR DO SAQUE: "))
-                        print("----------------------------------")
+                        print("---------------------------------------------------------------------------------------")
                         conta_poupanca.sacar(valor_saque)
-                        print("Valor sacado da conta poupança com sucesso!")
+                        print("Valor da conta poupança sacado com sucesso!")
 
                         log.info("Saque em Conta Poupança realizado.")
 
@@ -123,7 +123,8 @@ class Menu:
                     else:
                         print("Escolha inválida")    
                 except:
-                    print("A opção Extrato não é válida sem uma conta criada.")             
+                    print("A opção Extrato não é válida sem uma conta criada.")      
+                menu()           
             elif opcoes == "6": 
                 print("OBIGADO E VOLTE SEMPRE!")
 
