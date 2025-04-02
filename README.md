@@ -4,15 +4,6 @@ Estudo sobre orientação a objetos e os respectivos testes unitário em linguag
 
 VENV: Um ambiente virtual em Python isola dependências do projeto, evitando conflitos com pacotes globais do sistema. Ele permite que cada projeto tenha suas próprias bibliotecas e versões específicas.
 
-O projeto é composto por 11 classes e sete pacotes: 
-* usuário: classe PessoaFísica; 
-* conta: classes ContaCorrente e ContaPoupança que estendem a classe abstrata ContaBancária;
-* transação: classes Depósito e Saque que estendem a classe Transação;
-* histórico: classe Histórico;
-* extrato: classe Extrato;
-* log: classe Logging;
-* e menu: classe Menu.
-
 O projeto também conta com algumas classes de testes unitários com módulo 'unittest'. Seguem abaixo os comandos para serem executados na raiz do projeto.
 * ```python -m unittest tests/banco/usuario/TestPessoaFisica.py```
 * ```python -m unittest tests/banco/conta/TestContaCorrente.py```
@@ -29,10 +20,12 @@ O projeto também conta com algumas classes de testes unitários com módulo 'un
 
 ## MODO DE UTILIZAR
 * Clonar repositório.
-* Entrar no diretório do projeto ```cd banco-venv-python```, executar ```python -m venv venv``` para instalar o ambiente virtual.
-* Executar ```pip install -r requirements.txt``` para instalar as dependências. Obs: Este projeto não contém módulos extenos.
+* Entrar no diretório do projeto ```cd banco-venv-python```.
+* Executar ```python -m venv venv``` para instalar o ambiente virtual.
 * Executar, caso esteja no Windows, ```venv\Scripts\activate``` para iniciar o ambiente. Caso Linux ou MacOS, ```source venv/bin/activate```.
 * ```python app.py``` - Executa o algoritmo.
+* Executar ```pip install -r requirements.txt``` para instalar as dependências. Obs: Este projeto não contém módulos extenos.
+
 * Para sair do ambiente virtual ```deactivate```.
 
 ## COMANDOS IMPORTANTES
